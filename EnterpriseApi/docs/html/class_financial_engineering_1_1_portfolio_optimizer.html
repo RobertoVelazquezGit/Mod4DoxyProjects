@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Market Data Processor: FinancialEngineering::PortfolioOptimizer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -130,10 +131,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a06f1c4e89744e2ca4ef7ead58eaf5c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates risk as the square root of the weighted portfolio variance.  <br /></td></tr>
 <tr class="memitem:af5d42f01b67d8a2f61129822e51a7edb" id="r_af5d42f01b67d8a2f61129822e51a7edb"><td class="memItemLeft">std::vector&lt; std::map&lt; std::string, double &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af5d42f01b67d8a2f61129822e51a7edb">generateEfficientFrontier</a> (int numPoints=50, double minReturn=0.05, double maxReturn=0.15)</td></tr>
 <tr class="memdesc:af5d42f01b67d8a2f61129822e51a7edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates allocations for evenly spaced target returns.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0a5f540bb086d339ec57cbc00f0fe8b7" id="r_a0a5f540bb086d339ec57cbc00f0fe8b7"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0a5f540bb086d339ec57cbc00f0fe8b7">assets</a></td></tr>
+<tr class="memitem:a30a44d826a09a819e333b4c31195b44a" id="r_a30a44d826a09a819e333b4c31195b44a"><td class="memItemLeft">std::map&lt; std::string, double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a30a44d826a09a819e333b4c31195b44a">expectedReturns</a></td></tr>
+<tr class="memitem:a5803197e076b09e8ffd82e90e0225f52" id="r_a5803197e076b09e8ffd82e90e0225f52"><td class="memItemLeft">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5803197e076b09e8ffd82e90e0225f52">covarianceMatrix</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stores portfolio assets and covariance data and calculates portfolio risk. </p>
 <dl class="section note"><dt>Note</dt><dd>Portfolio optimization currently assigns equal weights, ignoring target returns and constraints. Frontier generation repeats this allocation for each requested point rather than computing an efficient frontier. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8h_source.html#l00184">184</a> of file <a class="el" href="_market_data_processor_8h_source.html">MarketDataProcessor.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a78be7f683f9254673e2f609fc324d2be" name="a78be7f683f9254673e2f609fc324d2be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78be7f683f9254673e2f609fc324d2be">&#9670;&#160;</a></span>addAsset()</h2>
@@ -164,6 +173,8 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Empty symbols and non-finite returns are ignored. New assets retain their insertion order for indexing the covariance matrix. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8cpp_source.html#l00087">87</a> of file <a class="el" href="_market_data_processor_8cpp_source.html">MarketDataProcessor.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a06f1c4e89744e2ca4ef7ead58eaf5c0b" name="a06f1c4e89744e2ca4ef7ead58eaf5c0b"></a>
@@ -190,6 +201,8 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>sqrt(max(0, w^T * covarianceMatrix * w)), or zero if matrix dimensions do not match the number of registered assets </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Weights for unregistered assets are ignored. Weights are not normalized, and the matrix is not checked for symmetry or positive semidefiniteness. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8cpp_source.html#l00124">124</a> of file <a class="el" href="_market_data_processor_8cpp_source.html">MarketDataProcessor.cpp</a>.</p>
 
 </div>
 </div>
@@ -229,6 +242,18 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Allocations in target sampling order, or an empty vector if numPoints is not positive; each allocation is empty if no assets are registered </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Calls <a class="el" href="#a6c0be32c46c22917f235c0d7adb6aad9" title="Builds an equally weighted allocation across all registered assets.">optimizePortfolio()</a> for each target. Its current equal-weight implementation produces identical allocations for all points. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8cpp_source.html#l00155">155</a> of file <a class="el" href="_market_data_processor_8cpp_source.html">MarketDataProcessor.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_financial_engineering_1_1_portfolio_optimizer_af5d42f01b67d8a2f61129822e51a7edb_cgraph.png" border="0" usemap="#aclass_financial_engineering_1_1_portfolio_optimizer_af5d42f01b67d8a2f61129822e51a7edb_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_financial_engineering_1_1_portfolio_optimizer_af5d42f01b67d8a2f61129822e51a7edb_cgraph" id="aclass_financial_engineering_1_1_portfolio_optimizer_af5d42f01b67d8a2f61129822e51a7edb_cgraph">
+<area shape="rect" title="Generates allocations for evenly spaced target returns." alt="" coords="5,5,176,64"/>
+<area shape="rect" href="class_financial_engineering_1_1_portfolio_optimizer.html#a6c0be32c46c22917f235c0d7adb6aad9" title="Builds an equally weighted allocation across all registered assets." alt="" coords="224,5,365,64"/>
+<area shape="poly" title=" " alt="" coords="176,32,211,34,205,35,176,37"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a6c0be32c46c22917f235c0d7adb6aad9" name="a6c0be32c46c22917f235c0d7adb6aad9"></a>
@@ -261,6 +286,18 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Asset weights of 1 / asset count, or an empty map if no assets exist </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This simplified implementation does not use expected returns or covariance data and does not enforce the requested return or constraints. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8cpp_source.html#l00105">105</a> of file <a class="el" href="_market_data_processor_8cpp_source.html">MarketDataProcessor.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_financial_engineering_1_1_portfolio_optimizer_a6c0be32c46c22917f235c0d7adb6aad9_icgraph.png" border="0" usemap="#aclass_financial_engineering_1_1_portfolio_optimizer_a6c0be32c46c22917f235c0d7adb6aad9_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_financial_engineering_1_1_portfolio_optimizer_a6c0be32c46c22917f235c0d7adb6aad9_icgraph" id="aclass_financial_engineering_1_1_portfolio_optimizer_a6c0be32c46c22917f235c0d7adb6aad9_icgraph">
+<area shape="rect" title="Builds an equally weighted allocation across all registered assets." alt="" coords="224,5,365,64"/>
+<area shape="rect" href="class_financial_engineering_1_1_portfolio_optimizer.html#af5d42f01b67d8a2f61129822e51a7edb" title="Generates allocations for evenly spaced target returns." alt="" coords="5,5,176,64"/>
+<area shape="poly" title=" " alt="" coords="205,35,176,37,176,32,211,34"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ac1f644a94466d25f2bbb5659a00a9ee5" name="ac1f644a94466d25f2bbb5659a00a9ee5"></a>
@@ -287,11 +324,86 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>No validation is performed here. <a class="el" href="#a06f1c4e89744e2ca4ef7ead58eaf5c0b" title="Calculates risk as the square root of the weighted portfolio variance.">calculatePortfolioRisk()</a> requires a square matrix with one row and column per registered asset. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8cpp_source.html#l00100">100</a> of file <a class="el" href="_market_data_processor_8cpp_source.html">MarketDataProcessor.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a0a5f540bb086d339ec57cbc00f0fe8b7" name="a0a5f540bb086d339ec57cbc00f0fe8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5f540bb086d339ec57cbc00f0fe8b7">&#9670;&#160;</a></span>assets</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; FinancialEngineering::PortfolioOptimizer::assets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8h_source.html#l00186">186</a> of file <a class="el" href="_market_data_processor_8h_source.html">MarketDataProcessor.h</a>.</p>
+
+</div>
+</div>
+<a id="a5803197e076b09e8ffd82e90e0225f52" name="a5803197e076b09e8ffd82e90e0225f52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5803197e076b09e8ffd82e90e0225f52">&#9670;&#160;</a></span>covarianceMatrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; FinancialEngineering::PortfolioOptimizer::covarianceMatrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8h_source.html#l00188">188</a> of file <a class="el" href="_market_data_processor_8h_source.html">MarketDataProcessor.h</a>.</p>
+
+</div>
+</div>
+<a id="a30a44d826a09a819e333b4c31195b44a" name="a30a44d826a09a819e333b4c31195b44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a44d826a09a819e333b4c31195b44a">&#9670;&#160;</a></span>expectedReturns</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, double&gt; FinancialEngineering::PortfolioOptimizer::expectedReturns</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_market_data_processor_8h_source.html#l00187">187</a> of file <a class="el" href="_market_data_processor_8h_source.html">MarketDataProcessor.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_market_data_processor_8h_source.html">MarketDataProcessor.h</a></li>
-<li><b>MarketDataProcessor.cpp</b></li>
+<li><a class="el" href="_market_data_processor_8cpp_source.html">MarketDataProcessor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

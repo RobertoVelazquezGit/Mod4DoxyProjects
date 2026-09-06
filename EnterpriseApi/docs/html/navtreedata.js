@@ -25,12 +25,20 @@
 var NAVTREE =
 [
   [ "Market Data Processor", "index.html", [
+    [ "Enterprise API", "md__r_e_a_d_m_e.html", [
+      [ "Overview", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Main Features", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Main Classes", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Requirements", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Documentation", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -41,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_market_data_processor_8h.html"
+"_market_data_processor_8cpp_source.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

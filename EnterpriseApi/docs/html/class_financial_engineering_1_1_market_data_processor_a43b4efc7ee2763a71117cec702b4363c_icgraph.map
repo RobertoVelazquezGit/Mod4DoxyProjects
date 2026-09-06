@@ -1,0 +1,5 @@
+<map id="FinancialEngineering::MarketDataProcessor::calculateVolatility" name="FinancialEngineering::MarketDataProcessor::calculateVolatility">
+<area shape="rect" id="Node000001" title="Calculates the population standard deviation of recent log returns." alt="" coords="218,5,374,64"/>
+<area shape="rect" id="Node000002" href="$class_financial_engineering_1_1_market_data_processor.html#ae946956faf6f9ca6c491759d8ca9f7d2" title="Finds assets whose volatility strictly exceeds volatilityThreshold." alt="" coords="5,5,170,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,35,170,37,170,32,205,34"/>
+</map>

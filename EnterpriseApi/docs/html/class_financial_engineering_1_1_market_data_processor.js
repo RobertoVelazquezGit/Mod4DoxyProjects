@@ -5,5 +5,8 @@ var class_financial_engineering_1_1_market_data_processor =
     [ "calculateSharpeRatio", "class_financial_engineering_1_1_market_data_processor.html#a43d62b4384a135648832da35ab855243", null ],
     [ "calculateVolatility", "class_financial_engineering_1_1_market_data_processor.html#a43b4efc7ee2763a71117cec702b4363c", null ],
     [ "clearHistoricalData", "class_financial_engineering_1_1_market_data_processor.html#a84a00c31ba5501422e75595a82956039", null ],
-    [ "getHighVolatilityAssets", "class_financial_engineering_1_1_market_data_processor.html#ae946956faf6f9ca6c491759d8ca9f7d2", null ]
+    [ "getHighVolatilityAssets", "class_financial_engineering_1_1_market_data_processor.html#ae946956faf6f9ca6c491759d8ca9f7d2", null ],
+    [ "lastUpdate", "class_financial_engineering_1_1_market_data_processor.html#a0d45b27ae7b4a3a64e56a9d8d300ff86", null ],
+    [ "priceHistory", "class_financial_engineering_1_1_market_data_processor.html#aa8a35b02c2e8110f9d13ada4cd48dd47", null ],
+    [ "volatilityThreshold", "class_financial_engineering_1_1_market_data_processor.html#a1ffd2500eee0ca127a7f5e71c3f1f07b", null ]
 ];

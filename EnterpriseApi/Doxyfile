@@ -597,7 +597,7 @@ EXTRACT_ALL            = NO
 # privados de una clase se incluirán en la documentación.
 # El valor predeterminado es: NO.
 
-EXTRACT_PRIVATE        = NO
+EXTRACT_PRIVATE        = YES
 
 # Si la etiqueta EXTRACT_PRIV_VIRTUAL está configurada en YES, los métodos
 # virtuales privados documentados de una clase se incluirán en la documentación.
@@ -1325,7 +1325,7 @@ FILTER_SOURCE_PATTERNS =
 # principal (index.html). Esto puede ser útil si tiene un proyecto en, por
 # ejemplo, GitHub y desea reutilizar el archivo README.md como página principal.
 
-USE_MDFILE_AS_MAINPAGE =
+USE_MDFILE_AS_MAINPAGE = "USE_MDFILE_AS_MAINPAGE = README.md"
 
 # Si la etiqueta IMPLICIT_DIR_DOCS está configurada en YES, cualquier archivo
 # README.md encontrado en los subdirectorios de la raíz del proyecto se usará
@@ -1359,7 +1359,7 @@ FORTRAN_COMMENT_AFTER  = 72
 # asegurese de que también VERBATIM_HEADERS este configurado en NO.
 # El valor predeterminado es: NO.
 
-SOURCE_BROWSER         = NO
+SOURCE_BROWSER         = YES
 
 # Si la etiqueta INLINE_SOURCES está configurada en YES, el cuerpo de funciones,
 # macros multilínea, enumeraciones o variables inicializadas con lista se
@@ -2823,7 +2823,7 @@ HIDE_UNDOC_RELATIONS   = YES
 # efecto si esta opción está configurada en NO.
 # El valor predeterminado es: NO.
 
-HAVE_DOT               = NO
+HAVE_DOT               = YES
 
 # La etiqueta DOT_NUM_THREADS especifica el número de invocaciones de dot que
 # Doxygen puede ejecutar en paralelo. Cuando se configura en 0, Doxygen lo
@@ -3026,7 +3026,7 @@ INCLUDED_BY_GRAPH      = YES
 # El valor predeterminado es: NO.
 # Esta etiqueta requiere que la etiqueta HAVE_DOT esté establecida en YES.
 
-CALL_GRAPH             = NO
+CALL_GRAPH             = YES
 
 # Si la etiqueta CALLER_GRAPH está configurada en YES, Doxygen generará un grafo
 # de dependencias de llamadores para cada función global o método de clase.
@@ -3038,7 +3038,7 @@ CALL_GRAPH             = NO
 # El valor predeterminado es: NO.
 # Esta etiqueta requiere que la etiqueta HAVE_DOT esté establecida en YES.
 
-CALLER_GRAPH           = NO
+CALLER_GRAPH           = YES
 
 # Si la etiqueta GRAPHICAL_HIERARCHY está configurada en YES, Doxygen mostrará
 # una jerarquía gráfica de todas las clases. Tenga en cuenta que habilitar esta
