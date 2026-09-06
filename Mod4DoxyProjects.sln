@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36811.4 d17.14
+VisualStudioVersion = 17.14.36811.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnterpriseApi", "EnterpriseApi\EnterpriseApi.vcxproj", "{081C7D41-00FA-4A29-BEA8-63A338BE7D57}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComplexSystemArch", "ComplexSystemArch\ComplexSystemArch.vcxproj", "{159050AE-527C-4271-9FEB-66556BE4865F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{081C7D41-00FA-4A29-BEA8-63A338BE7D57}.Release|x64.Build.0 = Release|x64
 		{081C7D41-00FA-4A29-BEA8-63A338BE7D57}.Release|x86.ActiveCfg = Release|Win32
 		{081C7D41-00FA-4A29-BEA8-63A338BE7D57}.Release|x86.Build.0 = Release|Win32
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Debug|x64.ActiveCfg = Debug|x64
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Debug|x64.Build.0 = Debug|x64
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Debug|x86.ActiveCfg = Debug|Win32
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Debug|x86.Build.0 = Debug|Win32
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Release|x64.ActiveCfg = Release|x64
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Release|x64.Build.0 = Release|x64
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Release|x86.ActiveCfg = Release|Win32
+		{159050AE-527C-4271-9FEB-66556BE4865F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
