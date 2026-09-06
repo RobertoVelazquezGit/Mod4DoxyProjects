@@ -1,4 +1,6 @@
 #pragma once
+#pragma once
+
 #include <memory>
 #include <thread>
 #include <mutex>
@@ -6,44 +8,13 @@
 #include <queue>
 #include <functional>
 #include <atomic>
+#include <string>
+#include <vector>
+
+#include <glm/glm.hpp>  // ToDo install glm library for matrix and vector operations
 
 namespace GameEngine {
 
-    /**
-     * @file RenderingPipeline.h
-     * @brief High-performance multi-threaded rendering engine for real-time graphics
-     * @author Graphics Engine Team
-     * @version 3.2.0
-     *
-     * ARCHITECTURE OVERVIEW
-     * ====================
-     *
-     * The rendering pipeline uses a producer-consumer pattern with the following components:
-     *
-     * Main Thread (Producer):
-     * - Submits render commands to thread-safe queue
-     * - Manages scene updates and culling
-     * - Handles user input and game logic
-     *
-     * Render Thread (Consumer):
-     * - Processes render commands from queue
-     * - Executes GPU operations and state changes
-     * - Manages resource uploads and shader compilation
-     *
-     * Thread Safety Model:
-     * - Command queue protected by mutex and condition variable
-     * - Render state isolated to render thread only
-     * - Metrics updated atomically for lock-free access
-     *
-     * Performance Targets:
-     * - 60+ FPS at 1920x1080 resolution
-     * - <16.67ms frame time for smooth gameplay
-     * - Support for 100,000+ triangles per frame
-     * - Dynamic LOD and frustum culling
-     *
-     * @warning Graphics context must be current on render thread only.
-     *          Violating this constraint will cause undefined behavior.
-     */
     class RenderingPipeline {
     public:
         struct RenderConfig {
@@ -127,4 +98,3 @@ namespace GameEngine {
     };
 
 }
-
