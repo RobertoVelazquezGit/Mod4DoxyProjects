@@ -86,29 +86,50 @@ namespace FinancialEngineering {
         /// @endcode
         MarketDataProcessor(double threshold = 0.02);
 
+        /// @brief Appends a valid price to the symbol's history and updates lastUpdate
+        /// @param symbol Non-empty asset identifier
+        /// @param price Finite, strictly positive price
+        /// @param timestamp Timestamp stored as the most recent update
+        /// @return true if the price was added; false if symbol or price is invalid
+        /// @note Prices are stored in insertion order; timestamps are not validated
+        ///       or stored individually for each price.
         bool addPriceData(const std::string& symbol, double price,
             std::chrono::system_clock::time_point timestamp);
 
+        /// @brief Calculates the population standard deviation of recent log returns
+        /// @param symbol Asset whose price history is used
+        /// @param windowSize Maximum number of consecutive returns to include (default: 30)
+        /// @return Non-annualized volatility, or std::nullopt if the symbol is unknown,
+        ///         fewer than two prices exist, or windowSize is not positive
+        /// @note Uses the latest prices in insertion order and all available returns
+        ///       if fewer than windowSize exist. A single return produces zero volatility.
         std::optional<double> calculateVolatility(const std::string& symbol,
             int windowSize = 30);
 
+        /// @brief Finds assets whose volatility strictly exceeds volatilityThreshold
+        /// @return Symbol-volatility pairs ordered by symbol; empty if none qualify
+        /// @note Uses calculateVolatility() with its default window of 30 returns.
+        ///       Assets without a calculable volatility are omitted.
         std::vector<std::pair<std::string, double>> getHighVolatilityAssets();
 
+        /// @brief Removes the price history of one asset or all assets
+        /// @param symbol Asset to remove, or an empty string to clear all histories
+        /// @note An unknown symbol has no history to remove. lastUpdate is reset to
+        ///       its default value when no histories remain; otherwise it is retained.
         void clearHistoricalData(const std::string& symbol = "");
 
-        /// @brief Calculates the Sharpe ratio for a collection of asset returns
+        /// @brief Calculates the arithmetic mean of a collection of asset returns
         ///
-        /// Computes the risk-adjusted performance of an investment using the
-        /// provided sequence of returns and a specified risk-free rate.
+        /// This simplified implementation returns the mean of the provided returns.
+        /// It does not yet calculate a Sharpe ratio and ignores riskFreeRate.
         ///
         /// @tparam PriceContainer Container type holding the return values.
         ///         The container must support iteration, empty(), and size().
         ///
         /// @param returns Collection of asset returns used for the calculation
-        /// @param riskFreeRate Risk-free rate used as the reference return
-        ///                     (default: 0.02, representing 2%)
+        /// @param riskFreeRate Reserved risk-free rate; currently ignored (default: 0.02)
         ///
-        /// @return Sharpe ratio calculated from the provided returns
+        /// @return Arithmetic mean of the returns, or 0.0 if the container is empty
         ///
         /// @pre returns should contain valid numeric return values
         ///
@@ -123,7 +144,13 @@ namespace FinancialEngineering {
             double riskFreeRate = 0.02);
     };
 
-    // Template implementation
+    /// @brief Calculates the arithmetic mean of a collection of asset returns
+    /// @tparam PriceContainer Container of numeric returns supporting iteration,
+    ///         empty(), and size()
+    /// @param returns Collection of asset returns used for the calculation
+    /// @param riskFreeRate Reserved risk-free rate; currently ignored
+    /// @return Arithmetic mean of the returns, or 0.0 if the container is empty
+    /// @note This simplified implementation does not yet calculate a Sharpe ratio.
     template<typename PriceContainer>
     double MarketDataProcessor::calculateSharpeRatio(
         const PriceContainer& returns,
@@ -149,6 +176,11 @@ namespace FinancialEngineering {
         return mean;
     }
 
+    /// @class PortfolioOptimizer
+    /// @brief Stores portfolio assets and covariance data and calculates portfolio risk
+    /// @note Portfolio optimization currently assigns equal weights, ignoring target
+    ///       returns and constraints. Frontier generation repeats this allocation
+    ///       for each requested point rather than computing an efficient frontier.
     class PortfolioOptimizer {
     private:
         std::vector<std::string> assets;
@@ -156,16 +188,44 @@ namespace FinancialEngineering {
         std::vector<std::vector<double>> covarianceMatrix;
 
     public:
+        /// @brief Adds an asset or updates the expected return of an existing asset
+        /// @param symbol Non-empty asset identifier
+        /// @param expectedReturn Finite expected return associated with the asset
+        /// @note Empty symbols and non-finite returns are ignored. New assets retain
+        ///       their insertion order for indexing the covariance matrix.
         void addAsset(const std::string& symbol, double expectedReturn);
 
+        /// @brief Replaces the stored covariance matrix with a copy of matrix
+        /// @param matrix Covariance values with rows and columns in asset insertion order
+        /// @note No validation is performed here. calculatePortfolioRisk() requires
+        ///       a square matrix with one row and column per registered asset.
         void updateCovarianceMatrix(const std::vector<std::vector<double>>& matrix);
 
+        /// @brief Builds an equally weighted allocation across all registered assets
+        /// @param targetReturn Requested portfolio return; currently ignored
+        /// @param constraints Optional allocation constraints; currently ignored
+        /// @return Asset weights of 1 / asset count, or an empty map if no assets exist
+        /// @note This simplified implementation does not use expected returns or
+        ///       covariance data and does not enforce the requested return or constraints.
         std::map<std::string, double> optimizePortfolio(double targetReturn,
             const std::map<std::string, double>& constraints = {});
 
+        /// @brief Calculates risk as the square root of the weighted portfolio variance
+        /// @param weights Asset weights; missing registered assets receive zero weight
+        /// @return sqrt(max(0, w^T * covarianceMatrix * w)), or zero if matrix
+        ///         dimensions do not match the number of registered assets
+        /// @note Weights for unregistered assets are ignored. Weights are not normalized,
+        ///       and the matrix is not checked for symmetry or positive semidefiniteness.
         double calculatePortfolioRisk(const std::map<std::string, double>& weights);
 
-        /// constraints is an empty map by default if no constraints are provided.
+        /// @brief Generates allocations for evenly spaced target returns
+        /// @param numPoints Number of allocations to generate (default: 50)
+        /// @param minReturn First target return, also used when numPoints is one
+        /// @param maxReturn Last target return when numPoints is greater than one
+        /// @return Allocations in target sampling order, or an empty vector if numPoints
+        ///         is not positive; each allocation is empty if no assets are registered
+        /// @note Calls optimizePortfolio() for each target. Its current equal-weight
+        ///       implementation produces identical allocations for all points.
         std::vector<std::map<std::string, double>> generateEfficientFrontier(
             int numPoints = 50, double minReturn = 0.05, double maxReturn = 0.15);
     };

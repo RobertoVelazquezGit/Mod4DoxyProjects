@@ -8,6 +8,10 @@
 
 using namespace FinancialEngineering;
 
+/// @brief Demonstrates market data processing and portfolio calculations
+/// @details Adds sample prices and assets, then prints volatility, the simplified
+///          Sharpe result, portfolio risk, equal weights, and generated allocations.
+/// @return Zero on normal completion
 int main()
 {
     // ------------------------------------------------------------
