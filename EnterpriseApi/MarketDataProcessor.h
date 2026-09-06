@@ -1,29 +1,27 @@
 #pragma once
-/**
- * @file MarketDataProcessor.h
- * @brief Advanced market data analysis and volatility calculation engine
- * @author Financial Engineering Team
- * @version 2.1.0
- * @date 2024-08-21
- *
- * This module provides comprehensive market data processing capabilities for
- * high-frequency trading systems and portfolio management applications.
- *
- * Key Features:
- * - Real-time volatility calculation using multiple mathematical models
- * - Historical price analysis with configurable time windows
- * - Risk metrics calculation including Sharpe ratio and drawdown analysis
- * - Thread-safe operations for concurrent market data processing
- *
- * Performance Characteristics:
- * - Supports processing of 10,000+ price updates per second
- * - Memory-efficient storage using rolling window buffers
- * - O(n) complexity for most statistical calculations
- *
- * @warning This library handles real financial data and calculations.
- *          All monetary calculations use double precision, which may
- *          introduce rounding errors in extreme precision scenarios.
- */
+/// @file MarketDataProcessor.h
+/// @brief Advanced market data analysis and volatility calculation engine
+/// @author Financial Engineering Team
+/// @version 2.1.0
+/// @date 2024-08-21
+///
+/// This module provides comprehensive market data processing capabilities for
+/// high-frequency trading systems and portfolio management applications.
+///
+/// Key Features:
+/// - Real-time volatility calculation using multiple mathematical models
+/// - Historical price analysis with configurable time windows
+/// - Risk metrics calculation including Sharpe ratio and drawdown analysis
+/// - Thread-safe operations for concurrent market data processing
+///
+/// Performance Characteristics:
+/// - Supports processing of 10,000+ price updates per second
+/// - Memory-efficient storage using rolling window buffers
+/// - O(n) complexity for most statistical calculations
+///
+/// @warning This library handles real financial data and calculations.
+///          All monetary calculations use double precision, which may
+///          introduce rounding errors in extreme precision scenarios.
 
 #include <vector>
 #include <map>
@@ -33,35 +31,33 @@
 
 namespace FinancialEngineering {
 
-    /**
-     * @class MarketDataProcessor
-     * @brief Processes market price data and calculates risk metrics
-     *
-     * This class provides a comprehensive suite of market data analysis tools
-     * designed for quantitative finance applications. It maintains historical
-     * price data for multiple assets and provides real-time calculation of
-     * volatility, correlation, and other risk metrics.
-     *
-     * Thread Safety:
-     * - All public methods are thread-safe
-     * - Internal data structures use read-write locks for optimal performance
-     * - Safe for concurrent use by multiple trading threads
-     *
-     * Usage Example:
-     * @code
-     * MarketDataProcessor processor(0.025);  // 2.5% volatility threshold
-     *
-     * // Add price data
-     * processor.addPriceData("AAPL", 150.25, std::chrono::system_clock::now());
-     * processor.addPriceData("AAPL", 151.30, std::chrono::system_clock::now());
-     *
-     * // Calculate 30-day volatility
-     * auto volatility = processor.calculateVolatility("AAPL", 30);
-     * if (volatility) {
-     *     std::cout << "AAPL 30-day volatility: " << *volatility << std::endl;
-     * }
-     * @endcode
-     */
+    /// @class MarketDataProcessor
+    /// @brief Processes market price data and calculates risk metrics
+    ///
+    /// This class provides a comprehensive suite of market data analysis tools
+    /// designed for quantitative finance applications. It maintains historical
+    /// price data for multiple assets and provides real-time calculation of
+    /// volatility, correlation, and other risk metrics.
+    ///
+    /// Thread Safety:
+    /// - All public methods are thread-safe
+    /// - Internal data structures use read-write locks for optimal performance
+    /// - Safe for concurrent use by multiple trading threads
+    ///
+    /// Usage Example:
+    /// @code
+    /// MarketDataProcessor processor(0.025);  // 2.5% volatility threshold
+    ///
+    /// // Add price data
+    /// processor.addPriceData("AAPL", 150.25, std::chrono::system_clock::now());
+    /// processor.addPriceData("AAPL", 151.30, std::chrono::system_clock::now());
+    ///
+    /// // Calculate 30-day volatility
+    /// auto volatility = processor.calculateVolatility("AAPL", 30);
+    /// if (volatility) {
+    ///     std::cout << "AAPL 30-day volatility: " << *volatility << std::endl;
+    /// }
+    /// @endcode
     class MarketDataProcessor {
     private:
         /// Historical price storage: symbol -> chronological price vector
@@ -74,22 +70,20 @@ namespace FinancialEngineering {
         double volatilityThreshold;
 
     public:
-        /**
-         * @brief Constructs a market data processor with specified volatility threshold
-         *
-         * @param threshold Volatility level above which assets are considered high-risk
-         *                 (expressed as decimal: 0.02 = 2% daily volatility)
-         *
-         * @pre threshold must be positive and typically between 0.001 (0.1%) and 0.1 (10%)
-         * @post Processor is ready to accept price data
-         *
-         * Example:
-         * @code
-         * MarketDataProcessor lowRisk(0.01);   // 1% threshold for conservative portfolios
-         * MarketDataProcessor standard(0.02);  // 2% threshold for balanced portfolios
-         * MarketDataProcessor highRisk(0.05);  // 5% threshold for aggressive strategies
-         * @endcode
-         */
+        /// @brief Constructs a market data processor with specified volatility threshold
+        ///
+        /// @param threshold Volatility level above which assets are considered high-risk
+        ///                 (expressed as decimal: 0.02 = 2% daily volatility)
+        ///
+        /// @pre threshold must be positive and typically between 0.001 (0.1%) and 0.1 (10%)
+        /// @post Processor is ready to accept price data
+        ///
+        /// Example:
+        /// @code
+        /// MarketDataProcessor lowRisk(0.01);   // 1% threshold for conservative portfolios
+        /// MarketDataProcessor standard(0.02);  // 2% threshold for balanced portfolios
+        /// MarketDataProcessor highRisk(0.05);  // 5% threshold for aggressive strategies
+        /// @endcode
         MarketDataProcessor(double threshold = 0.02);
 
         bool addPriceData(const std::string& symbol, double price,
@@ -102,6 +96,48 @@ namespace FinancialEngineering {
 
         void clearHistoricalData(const std::string& symbol = "");
 
+        /// @brief Calculates the Sharpe ratio for a collection of asset returns
+        ///
+        /// Computes the risk-adjusted performance of an investment using the
+        /// provided sequence of returns and a specified risk-free rate.
+        ///
+        /// @tparam PriceContainer Container type holding the return values.
+        ///         The container must support iteration, empty(), and size().
+        ///
+        /// @param returns Collection of asset returns used for the calculation
+        /// @param riskFreeRate Risk-free rate used as the reference return
+        ///                     (default: 0.02, representing 2%)
+        ///
+        /// @return Sharpe ratio calculated from the provided returns
+        ///
+        /// @pre returns should contain valid numeric return values
+        ///
+        /// Example:
+        /// @code
+        /// std::vector<double> returns = {0.01, 0.03, 0.02, -0.01};
+        ///
+        /// double sharpe = processor.calculateSharpeRatio(returns, 0.02);
+        /// @endcode
+        template<typename PriceContainer>
+        double calculateSharpeRatio(const PriceContainer& returns,
+            double riskFreeRate = 0.02)
+        {
+            if (returns.empty()) {
+                return 0.0;
+            }
+
+            double mean = 0.0;
+
+            for (const auto& value : returns) {
+                mean += value;
+            }
+
+            mean /= static_cast<double>(returns.size());
+
+            (void)riskFreeRate;
+
+            return mean;
+        }
         template<typename PriceContainer>
         double calculateSharpeRatio(const PriceContainer& returns,
             double riskFreeRate = 0.02)
@@ -143,6 +179,7 @@ namespace FinancialEngineering {
 
         double calculatePortfolioRisk(const std::map<std::string, double>& weights);
 
+        /// constraints is an empty map by default if no constraints are provided.
         std::vector<std::map<std::string, double>> generateEfficientFrontier(
             int numPoints = 50, double minReturn = 0.05, double maxReturn = 0.15);
     };

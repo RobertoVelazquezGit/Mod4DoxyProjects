@@ -84,8 +84,6 @@ namespace FinancialEngineering {
         }
     }
 
-    // ToDo
-
     void PortfolioOptimizer::addAsset(
         const std::string& symbol,
         double expectedReturn) {
@@ -112,7 +110,7 @@ namespace FinancialEngineering {
 
         std::map<std::string, double> weights;
         if (assets.empty()) {
-            return weights;
+			return weights;  // Return empty weights if no assets are available 
         }
 
         const double equalWeight = 1.0 / static_cast<double>(assets.size());
