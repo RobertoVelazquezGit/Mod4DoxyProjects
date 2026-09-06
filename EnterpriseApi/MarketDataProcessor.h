@@ -120,48 +120,34 @@ namespace FinancialEngineering {
         /// @endcode
         template<typename PriceContainer>
         double calculateSharpeRatio(const PriceContainer& returns,
-            double riskFreeRate = 0.02)
-        {
-            if (returns.empty()) {
-                return 0.0;
-            }
-
-            double mean = 0.0;
-
-            for (const auto& value : returns) {
-                mean += value;
-            }
-
-            mean /= static_cast<double>(returns.size());
-
-            (void)riskFreeRate;
-
-            return mean;
-        }
-        template<typename PriceContainer>
-        double calculateSharpeRatio(const PriceContainer& returns,
-            double riskFreeRate = 0.02)
-        {
-            // Avoid division by zero if the container is empty.
-            if (returns.empty()) {
-                return 0.0;
-            }
-
-            // Calculate the mean of all returns.
-            double mean = 0.0;
-
-            for (const auto& value : returns) {
-                mean += value;
-            }
-
-            mean /= static_cast<double>(returns.size());
-
-            // riskFreeRate is not used yet in this simplified implementation.
-            (void)riskFreeRate;
-
-            return mean;
-        }
+            double riskFreeRate = 0.02);
     };
+
+    // Template implementation
+    template<typename PriceContainer>
+    double MarketDataProcessor::calculateSharpeRatio(
+        const PriceContainer& returns,
+        double riskFreeRate)
+    {
+        // Avoid division by zero if the container is empty.
+        if (returns.empty()) {
+            return 0.0;
+        }
+
+        // Calculate the mean of all returns.
+        double mean = 0.0;
+
+        for (const auto& value : returns) {
+            mean += value;
+        }
+
+        mean /= static_cast<double>(returns.size());
+
+        // riskFreeRate is not used yet in this simplified implementation.
+        (void)riskFreeRate;
+
+        return mean;
+    }
 
     class PortfolioOptimizer {
     private:

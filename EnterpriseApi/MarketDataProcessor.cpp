@@ -123,16 +123,19 @@ namespace FinancialEngineering {
 
     double PortfolioOptimizer::calculatePortfolioRisk(
         const std::map<std::string, double>& weights) {
+		// covarianceMatrix.size() returns the number of rows, which should match the number of assets. 
         if (covarianceMatrix.size() != assets.size()) {
             return 0.0;
         }
 
+		// a covariance matrix should be square, so we check that each row has the same number of columns as there are assets.  
         for (const auto& row : covarianceMatrix) {
             if (row.size() != assets.size()) {
                 return 0.0;
             }
         }
 
+        // Calculates the portfolio variance using the well-known expression: variance = w^T * covarianceMatrix * w.
         double variance = 0.0;
         for (std::size_t row = 0; row < assets.size(); ++row) {
             const auto rowWeight = weights.find(assets[row]);
