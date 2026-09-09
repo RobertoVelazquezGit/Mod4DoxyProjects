@@ -1,20 +1,77 @@
-// GameEngine.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
 
 #include <iostream>
+#include "GameEngine.h"
+
+using namespace GameEngine;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // ============================================================
+    // RenderingPipeline
+    // ============================================================
+        RenderingPipeline::RenderConfig config{
+            1920,           // screenWidth
+            1080,           // screenHeight
+            true,           // enableHDR
+            true,           // enableAntiAliasing
+            4096,           // maxTextureSize
+            "./shaders"     // shaderDirectory
+    };
+
+    // Create the rendering pipeline.
+    RenderingPipeline pipeline(config);
+
+    // Initialize the rendering system and its worker thread.
+    if (!pipeline.initialize())
+    {
+        std::cout << "Error initializing RenderingPipeline\n";
+        return 1;
+    }
+
+    pipeline.beginFrame();
+
+    // Submit a simple command to the rendering thread.
+    pipeline.submitRenderCommand(
+        []()
+        {
+            std::cout << "Executing render command\n";
+        });
+
+    pipeline.endFrame();
+
+    // Get the mock performance metrics.
+    auto metrics = pipeline.getMetrics();
+
+    std::cout << "\n--- Performance metrics ---\n";
+    std::cout << "Frame time: " << metrics.frameTime << " ms\n";
+    std::cout << "Triangles:  " << metrics.trianglesRendered << '\n';
+    std::cout << "Draw calls: " << metrics.drawCalls << '\n';
+    std::cout << "GPU memory: " << metrics.gpuMemoryUsed << " MB\n";
+
+    pipeline.optimizePerformance(16.67);
+
+
+    // ============================================================
+    // EntityComponentSystem
+    // ============================================================
+
+    EntityComponentSystem ecs;
+
+    auto player = ecs.createEntity<int>();
+    auto enemy = ecs.createEntity<int>();
+
+    ecs.updateSystems(0.016);
+
+    ecs.destroyEntity(enemy);
+
+
+    // ============================================================
+    // Shutdown
+    // ============================================================
+
+    pipeline.shutdown();
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

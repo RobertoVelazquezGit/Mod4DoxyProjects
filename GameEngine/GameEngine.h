@@ -169,7 +169,7 @@ namespace GameEngine {
 
     private:
 
-        struct ComponentPool;
+		struct ComponentPool;  // Forward declaration for a mock component pool.    
 
         std::vector<std::unique_ptr<ComponentPool>> componentPools;
         std::vector<EntityId> entities;

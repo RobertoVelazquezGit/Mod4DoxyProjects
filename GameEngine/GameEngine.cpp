@@ -100,7 +100,7 @@ namespace GameEngine {
             renderThread.join();
         }
 
-        context.reset();
+		context.reset();  // a reset unique pointer to release the graphics context 
 
         std::cout << "[RenderingPipeline] Shutdown complete\n";
     }
