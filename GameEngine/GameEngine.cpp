@@ -1,3 +1,5 @@
+/// @file GameEngine.cpp
+/// @brief Implements the mock engine and its rendering command worker.
 #include "GameEngine.h"
 
 #include <algorithm>
@@ -12,15 +14,18 @@ namespace GameEngine {
      * In a real game engine this class could manage the graphics API,
      * GPU resources, device context, command buffers, etc.
      */
+    /// @brief Mock graphics context that only logs creation and destruction.
     class GraphicsContext
     {
     public:
 
+        /// @brief Logs context creation without allocating graphics resources.
         GraphicsContext()
         {
             std::cout << "[GraphicsContext] Created\n";
         }
 
+        /// @brief Logs context destruction.
         ~GraphicsContext()
         {
             std::cout << "[GraphicsContext] Destroyed\n";
@@ -241,6 +246,7 @@ namespace GameEngine {
       * Later this could become a type-erased base class used to
       * store pools of different component types.
       */
+    /// @brief Empty placeholder for future component storage.
     struct EntityComponentSystem::ComponentPool
     {
     };

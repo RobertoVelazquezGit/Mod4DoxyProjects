@@ -1,0 +1,8 @@
+<map id="GameEngine::RenderingPipeline::shutdown" name="GameEngine::RenderingPipeline::shutdown">
+<area shape="rect" id="Node000001" title="Waits for queued commands to finish and releases the graphics context." alt="" coords="263,51,472,93"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Runs a sample frame, prints mock metrics and creates and removes entities." alt="" coords="85,29,135,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,60,135,48,135,43,249,57"/>
+<area shape="rect" id="Node000003" href="$class_game_engine_1_1_rendering_pipeline.html#a14b99e82af9981a12f62d801de04d935" title="Shuts down the rendering pipeline before destruction." alt="" coords="5,80,215,123"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="244,86,215,92,215,87,250,85"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,28,155,21,153,15,138,10,110,8,79,11,65,18,65,20,67,24,88,35,83,37,64,28,59,21,61,14,77,6,110,3,139,5,156,11,161,22,150,32"/>
+</map>

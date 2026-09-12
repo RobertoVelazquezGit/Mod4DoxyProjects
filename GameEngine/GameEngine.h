@@ -1,3 +1,5 @@
+/// @file GameEngine.h
+/// @brief Mock rendering pipeline and entity-component system interfaces.
 #pragma once
 
 #include <memory>
@@ -19,9 +21,12 @@ namespace GameEngine {
     class GraphicsContext;
 
 
+    /// @brief Demonstrates a rendering command queue serviced by a worker thread.
+    /// @note Graphics operations and performance measurements are mocked.
     class RenderingPipeline {
     public:
 
+        /// @brief Rendering settings for the example; most are not applied by the mock.
         struct RenderConfig {
             int screenWidth, screenHeight;
             bool enableHDR;
@@ -30,6 +35,7 @@ namespace GameEngine {
             std::string shaderDirectory;
         };
 
+        /// @brief Simulated frame statistics, with time in ms and GPU memory in MB.
         struct PerformanceMetrics {
             double frameTime;
             int trianglesRendered;
@@ -52,14 +58,28 @@ namespace GameEngine {
 
     public:
 
+        /// @brief Constructs a stopped rendering pipeline.
+        /// @param config Settings whose screen dimensions are printed by the mock.
         explicit RenderingPipeline(const RenderConfig& config);
+        /// @brief Shuts down the rendering pipeline before destruction.
         ~RenderingPipeline();
 
+        /// @brief Creates the mock graphics context and starts the worker thread.
+        /// @return True if initialization completes or the pipeline is already running.
         bool initialize();
+        /// @brief Waits for queued commands to finish and releases the graphics context.
         void shutdown();
 
+        /// @brief Queues a command for execution by the rendering thread.
+        /// @param command Callable to execute.
         void submitRenderCommand(std::function<void()> command);
 
+        /// @brief Logs a mock mesh rendering request without drawing anything.
+        /// @tparam MeshType Mesh data type.
+        /// @tparam MaterialType Material data type.
+        /// @param mesh Mesh to render; unused in the mock.
+        /// @param material Material to apply; unused in the mock.
+        /// @param transform Transformation matrix; unused in the mock.
         template<typename MeshType, typename MaterialType>
         void renderMesh(const MeshType& mesh,
             const MaterialType& material,
@@ -71,31 +91,47 @@ namespace GameEngine {
             std::cout << "[RenderingPipeline] renderMesh() called\n";
         }
 
+        /// @brief Logs the start of a simulated frame.
         void beginFrame();
+        /// @brief Logs the end of a frame and updates mock statistics.
         void endFrame();
 
+        /// @brief Retrieves the current simulated statistics.
+        /// @return A copy of the metrics, initially zero until a frame ends.
         PerformanceMetrics getMetrics() const;
 
+        /// @brief Logs a performance target without changing rendering settings.
+        /// @param targetFrameTime Target frame duration in milliseconds.
         void optimizePerformance(double targetFrameTime);
 
     private:
 
+        /// @brief Waits for commands until shutdown is requested and the queue is empty.
         void renderLoop();
+        /// @brief Removes and executes commands until the queue is empty.
         void processRenderQueue();
+        /// @brief Assigns fixed mock values to the performance metrics.
         void updateMetrics();
     };
 
 
+    /// @brief Demonstrates entity creation and removal with a mock component API.
+    /// @note Components and systems are not stored or processed by this implementation.
     class EntityComponentSystem {
     public:
 
         using EntityId = uint64_t;
         using ComponentTypeId = size_t;
 
+        /// @brief Creates an empty entity registry with identifiers starting at one.
         EntityComponentSystem();
+        /// @brief Destroys the registry and logs its destruction.
         ~EntityComponentSystem();
 
 
+        /// @brief Creates and records a new entity identifier.
+        /// @tparam ComponentType Placeholder type; no component is created.
+        /// @return The identifier assigned to the new entity.
         template<typename ComponentType>
         EntityId createEntity()
         {
@@ -112,6 +148,10 @@ namespace GameEngine {
         }
 
 
+        /// @brief Logs a component addition without storing the component.
+        /// @tparam ComponentType Component type.
+        /// @param entity Target entity identifier.
+        /// @param component Component to add; unused in the mock.
         template<typename ComponentType>
         void addComponent(EntityId entity, ComponentType&& component)
         {
@@ -125,6 +165,10 @@ namespace GameEngine {
         }
 
 
+        /// @brief Logs a component lookup.
+        /// @tparam ComponentType Requested component type.
+        /// @param entity Entity identifier to look up.
+        /// @return Always nullptr because component storage is mocked.
         template<typename ComponentType>
         ComponentType* getComponent(EntityId entity)
         {
@@ -140,6 +184,9 @@ namespace GameEngine {
         }
 
 
+        /// @brief Logs an iteration request without invoking the callback.
+        /// @tparam ComponentTypes Component types requested for iteration.
+        /// @param callback Intended per-entity operation; unused in the mock.
         template<typename... ComponentTypes>
         void forEachEntity(
             std::function<void(EntityId, ComponentTypes&...)> callback)
@@ -152,9 +199,14 @@ namespace GameEngine {
         }
 
 
+        /// @brief Removes an entity identifier if it exists.
+        /// @param entity Identifier of the entity to remove.
         void destroyEntity(EntityId entity);
 
 
+        /// @brief Logs system registration without retaining the system.
+        /// @tparam SystemType Type of system supplied.
+        /// @param system System owned by this call and released when it returns.
         template<typename SystemType>
         void registerSystem(std::unique_ptr<SystemType> system)
         {
@@ -165,6 +217,8 @@ namespace GameEngine {
         }
 
 
+        /// @brief Logs a mock system update without executing systems.
+        /// @param deltaTime Elapsed time in seconds.
         void updateSystems(double deltaTime);
 
     private:

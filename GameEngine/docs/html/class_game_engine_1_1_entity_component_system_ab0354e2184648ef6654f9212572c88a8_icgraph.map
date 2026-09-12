@@ -1,0 +1,6 @@
+<map id="GameEngine::EntityComponentSystem::updateSystems" name="GameEngine::EntityComponentSystem::updateSystems">
+<area shape="rect" id="Node000001" title="Logs a mock system update without executing systems." alt="" coords="111,21,317,64"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Runs a sample frame, prints mock metrics and creates and removes entities." alt="" coords="14,29,63,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,44,64,45,64,40,98,42"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="69,18,61,11,39,8,20,10,10,15,9,21,16,30,11,32,4,23,6,12,18,5,39,3,64,7,74,18"/>
+</map>

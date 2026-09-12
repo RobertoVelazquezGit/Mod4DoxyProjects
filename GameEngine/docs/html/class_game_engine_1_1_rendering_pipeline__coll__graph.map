@@ -1,0 +1,5 @@
+<map id="GameEngine::RenderingPipeline" name="GameEngine::RenderingPipeline">
+<area shape="rect" id="Node000001" title="Demonstrates a rendering command queue serviced by a worker thread." alt="" coords="5,120,215,147"/>
+<area shape="rect" id="Node000002" href="$struct_game_engine_1_1_rendering_pipeline_1_1_performance_metrics.html" title="Simulated frame statistics, with time in ms and GPU memory in MB." alt="" coords="5,5,215,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,62,113,120,107,119,108,65"/>
+</map>

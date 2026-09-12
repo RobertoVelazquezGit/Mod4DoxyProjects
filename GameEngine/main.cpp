@@ -1,10 +1,14 @@
 
 
+/// @file main.cpp
+/// @brief Demonstrates the mock rendering pipeline and entity lifecycle.
 #include <iostream>
 #include "GameEngine.h"
 
 using namespace GameEngine;
 
+/// @brief Runs a sample frame, prints mock metrics and creates and removes entities.
+/// @return Zero on success, or one if rendering initialization reports failure.
 int main()
 {
     // ============================================================

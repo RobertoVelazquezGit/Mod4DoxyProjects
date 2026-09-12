@@ -1,0 +1,7 @@
+<map id="GameEngine.h" name="GameEngine.h">
+<area shape="rect" id="Node000001" title="Mock rendering pipeline and entity&#45;component system interfaces." alt="" coords="72,5,180,32"/>
+<area shape="rect" id="Node000002" href="$_game_engine_8cpp.html" title="Implements the mock engine and its rendering command worker." alt="" coords="5,80,127,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,43,78,82,74,78,103,45"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Demonstrates the mock rendering pipeline and entity lifecycle." alt="" coords="150,80,224,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,42,179,80,174,79,145,46"/>
+</map>

@@ -1,7 +1,7 @@
-# Doxygen Guide for the EnterpriseApi Project
+# General Doxygen Guide for C++ Projects
 
 This guide summarizes the Doxygen configuration and workflow used so far
-in the `EnterpriseApi` C++ project.
+for a generic C++ project named `EjemploDoxy`.
 
 > This guide does **not** cover the installation of Doxygen or Graphviz.
 > It assumes both tools are already installed and available.
@@ -13,12 +13,12 @@ in the `EnterpriseApi` C++ project.
 The project has a structure similar to:
 
 ``` text
-EnterpriseApi/
+EjemploDoxy/
 ├── README.md
 ├── Doxyfile
 ├── main.cpp
-├── MarketDataProcessor.cpp
-├── MarketDataProcessor.h
+├── ExampleClass.cpp
+├── ExampleClass.h
 └── docs/
     └── html/
 ```
@@ -88,7 +88,7 @@ project.
 Example:
 
 ``` text
-C:\Dev\curso2526\AdvancedCpp\Mod4DoxyProjects\EnterpriseApi
+C:\Dev\Projects\EjemploDoxy
 ```
 
 The basic project information was configured in:
@@ -100,8 +100,8 @@ Wizard -> Project
 with values similar to:
 
 ``` text
-Project name:        Market Data Processor
-Project synopsis:    Market data processing and portfolio optimization example
+Project name:        EjemploDoxy
+Project synopsis:    Example C++ project documented with Doxygen
 Project version:     1.0
 ```
 
@@ -276,7 +276,7 @@ files.
 For example, a header may conceptually produce a graph such as:
 
 ``` text
-MarketDataProcessor.h
+ExampleClass.h
         |
         +----> vector
         +----> map
@@ -311,28 +311,30 @@ A call graph answers:
 
 > Which functions does this function call?
 
-For example, in this project:
+For example, in a generic project:
 
 ``` text
-generateEfficientFrontier()
-          |
-          v
- optimizePortfolio()
+processData()
+     |
+     v
+ validateData()
 ```
 
 because `generateEfficientFrontier()` contains a call similar to:
 
 ``` cpp
-frontier.push_back(optimizePortfolio(targetReturn));
+if (validateData()) {
+    // Continue processing...
+}
 ```
 
 Another example is:
 
 ``` text
-getHighVolatilityAssets()
-          |
-          v
- calculateVolatility()
+runApplication()
+       |
+       v
+ processData()
 ```
 
 Doxygen displays these relationships in the documentation with a section
@@ -361,16 +363,16 @@ A caller graph answers the opposite question:
 For example, from the point of view of `optimizePortfolio()`:
 
 ``` text
-generateEfficientFrontier()
-          |
-          v
- optimizePortfolio()
+processData()
+     |
+     v
+ validateData()
 ```
 
 The same relationship is now interpreted as:
 
 ``` text
-optimizePortfolio() is called by generateEfficientFrontier()
+validateData() is called by processData()
 ```
 
 Therefore:
@@ -416,9 +418,9 @@ EXTRACT_PRIVATE = YES
 This means Doxygen can also document private members such as:
 
 ``` cpp
-std::map<std::string, std::vector<double>> priceHistory;
-std::chrono::system_clock::time_point lastUpdate;
-double volatilityThreshold;
+std::vector<int> internalData;
+std::string configurationPath;
+bool initialized;
 ```
 
 This setting is useful for **internal developer documentation**.
@@ -462,10 +464,9 @@ was created in the root directory of the project.
 It contains a project overview with sections such as:
 
 ``` markdown
-# Enterprise API
+# EjemploDoxy
 
-Example C++ project demonstrating market data processing
-and portfolio optimization.
+Example C++ project used to demonstrate source-code documentation with Doxygen.
 
 ## Overview
 
@@ -477,8 +478,8 @@ and portfolio optimization.
 
 ## Main Classes
 
-- FinancialEngineering::MarketDataProcessor
-- FinancialEngineering::PortfolioOptimizer
+- ExampleNamespace::ExampleClass
+- ExampleNamespace::AnotherClass
 
 ## Requirements
 
@@ -510,13 +511,13 @@ docs/html/index.html
 
 ## 16. Automatic Links to C++ Entities
 
-The `README.md` currently contains class names such as:
+A `README.md` can contain fully qualified class names such as:
 
 ``` markdown
 ## Main Classes
 
-- FinancialEngineering::MarketDataProcessor
-- FinancialEngineering::PortfolioOptimizer
+- ExampleNamespace::ExampleClass
+- ExampleNamespace::AnotherClass
 ```
 
 Doxygen recognizes these fully qualified C++ entity names and
@@ -537,7 +538,7 @@ required.
 For example:
 
 ``` text
-@ref FinancialEngineering::MarketDataProcessor "market data processor"
+@ref ExampleNamespace::ExampleClass "example class"
 ```
 
 ------------------------------------------------------------------------

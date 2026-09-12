@@ -1,0 +1,5 @@
+<map id="GameEngine::RenderingPipeline::~RenderingPipeline" name="GameEngine::RenderingPipeline::~RenderingPipeline">
+<area shape="rect" id="Node000001" title="Shuts down the rendering pipeline before destruction." alt="" coords="5,5,215,48"/>
+<area shape="rect" id="Node000002" href="$class_game_engine_1_1_rendering_pipeline.html#abc3271530a30c1487c18d66d13baa292" title="Waits for queued commands to finish and releases the graphics context." alt="" coords="263,5,472,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,24,250,27,245,27,215,29"/>
+</map>
