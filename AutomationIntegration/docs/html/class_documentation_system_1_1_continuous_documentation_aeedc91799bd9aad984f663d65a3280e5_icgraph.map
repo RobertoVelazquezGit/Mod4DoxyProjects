@@ -1,0 +1,6 @@
+<map id="DocumentationSystem::ContinuousDocumentation::scheduleDocumentationUpdate" name="DocumentationSystem::ContinuousDocumentation::scheduleDocumentationUpdate">
+<area shape="rect" id="Node000001" title="Simulates scheduling with a no&#45;op." alt="" coords="112,13,323,72"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Exercises source analysis, documentation previews and simulated CI operations." alt="" coords="15,29,64,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,44,65,45,64,40,99,42"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="70,19,63,12,39,8,20,10,10,15,9,22,17,31,12,33,4,23,6,12,18,5,39,3,65,7,75,19"/>
+</map>

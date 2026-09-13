@@ -1,0 +1,5 @@
+<map id="DocumentationSystem::CodeAnalyzer::validateDocumentation" name="DocumentationSystem::CodeAnalyzer::validateDocumentation">
+<area shape="rect" id="Node000001" title="Checks whether class and method documentation strings are nonempty." alt="" coords="5,13,258,56"/>
+<area shape="rect" id="Node000002" href="$class_documentation_system_1_1_code_analyzer.html#a60250fd8d4938409bd5961880e8359e1" title="Finds classes and methods with empty documentation strings." alt="" coords="306,5,534,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,32,293,34,288,35,258,37"/>
+</map>

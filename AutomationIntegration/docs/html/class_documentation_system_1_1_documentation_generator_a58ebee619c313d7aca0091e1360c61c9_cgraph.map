@@ -1,0 +1,11 @@
+<map id="DocumentationSystem::DocumentationGenerator::generateDocumentation" name="DocumentationSystem::DocumentationGenerator::generateDocumentation">
+<area shape="rect" id="Node000001" title="Builds and discards a mock documentation preview." alt="" coords="5,88,180,147"/>
+<area shape="rect" id="Node000002" href="$class_documentation_system_1_1_documentation_generator.html#aa3f99c0471e5b09b5d88edaec70263fb" title="Simulates template application without file access." alt="" coords="231,5,406,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,85,224,68,220,71,176,90"/>
+<area shape="rect" id="Node000003" href="$class_documentation_system_1_1_documentation_generator.html#a580cfad33e59272c360759b964709ed7" title="Creates a plain&#45;text API preview for one class." alt="" coords="231,88,406,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,115,218,116,213,118,181,120"/>
+<area shape="rect" id="Node000005" href="$class_documentation_system_1_1_documentation_generator.html#a94c160fb5ba0f1ae56c7308feb983b24" title="Builds a mock cross&#45;reference list without hyperlinks." alt="" coords="228,171,409,229"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="175,145,224,164,219,165,174,150"/>
+<area shape="rect" id="Node000004" href="$class_documentation_system_1_1_documentation_generator.html#af932add7c6b8150719fba18194a57c6c" title="Formats a function signature and its documentation as text." alt="" coords="457,88,631,147"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="406,115,444,117,438,118,406,120"/>
+</map>

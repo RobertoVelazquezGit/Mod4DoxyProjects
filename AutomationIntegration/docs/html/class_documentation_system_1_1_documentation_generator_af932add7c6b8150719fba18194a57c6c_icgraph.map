@@ -1,0 +1,11 @@
+<map id="DocumentationSystem::DocumentationGenerator::formatFunction" name="DocumentationSystem::DocumentationGenerator::formatFunction">
+<area shape="rect" id="Node000001" title="Formats a function signature and its documentation as text." alt="" coords="553,39,727,97"/>
+<area shape="rect" id="Node000002" href="$class_documentation_system_1_1_documentation_generator.html#a580cfad33e59272c360759b964709ed7" title="Creates a plain&#45;text API preview for one class." alt="" coords="331,39,505,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="535,68,505,71,505,65,540,68"/>
+<area shape="rect" id="Node000003" href="$class_documentation_system_1_1_documentation_generator.html#a58ebee619c313d7aca0091e1360c61c9" title="Builds and discards a mock documentation preview." alt="" coords="108,5,283,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="313,53,283,50,283,45,318,53"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Exercises source analysis, documentation previews and simulated CI operations." alt="" coords="11,55,60,81"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="312,75,215,81,108,79,61,74,61,69,108,73,215,75,317,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="91,58,61,66,60,60,95,55"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="62,41,54,36,36,33,19,35,10,40,8,46,13,54,8,55,3,46,6,37,17,30,36,28,56,31,67,39"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="DocumentationSystem::DocumentationGenerator::generateCrossReferences" name="DocumentationSystem::DocumentationGenerator::generateCrossReferences">
+<area shape="rect" id="Node000001" title="Builds a mock cross&#45;reference list without hyperlinks." alt="" coords="331,13,512,72"/>
+<area shape="rect" id="Node000002" href="$class_documentation_system_1_1_documentation_generator.html#a58ebee619c313d7aca0091e1360c61c9" title="Builds and discards a mock documentation preview." alt="" coords="108,13,283,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,43,283,45,283,40,318,43"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Exercises source analysis, documentation previews and simulated CI operations." alt="" coords="11,29,60,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,44,61,45,60,40,95,42"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="62,15,54,10,36,8,19,10,10,15,8,20,13,28,8,30,3,21,6,11,17,5,36,3,56,5,67,14"/>
+</map>

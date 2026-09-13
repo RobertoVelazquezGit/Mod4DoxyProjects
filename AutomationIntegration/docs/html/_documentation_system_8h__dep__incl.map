@@ -1,0 +1,7 @@
+<map id="DocumentationSystem.h" name="DocumentationSystem.h">
+<area shape="rect" id="Node000001" title="Mock API for a documentation workflow example." alt="" coords="87,5,252,32"/>
+<area shape="rect" id="Node000002" href="$_documentation_system_8cpp_source.html" title=" " alt="" coords="5,80,185,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,42,109,82,106,77,143,44"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Demonstrates the mock documentation workflow." alt="" coords="208,80,283,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,40,235,80,230,79,193,45"/>
+</map>
