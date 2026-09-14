@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngine", "GameEngine\Ga
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutomationIntegration", "AutomationIntegration\AutomationIntegration.vcxproj", "{561DECE5-C043-4FB7-817E-292360564D6F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DocQuality", "DocQuality\DocQuality.vcxproj", "{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{561DECE5-C043-4FB7-817E-292360564D6F}.Release|x64.Build.0 = Release|x64
 		{561DECE5-C043-4FB7-817E-292360564D6F}.Release|x86.ActiveCfg = Release|Win32
 		{561DECE5-C043-4FB7-817E-292360564D6F}.Release|x86.Build.0 = Release|Win32
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Debug|x64.ActiveCfg = Debug|x64
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Debug|x64.Build.0 = Debug|x64
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Debug|x86.ActiveCfg = Debug|Win32
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Debug|x86.Build.0 = Debug|Win32
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Release|x64.ActiveCfg = Release|x64
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Release|x64.Build.0 = Release|x64
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Release|x86.ActiveCfg = Release|Win32
+		{3D2E91E0-FA66-47BA-9ABB-A880BF73523A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

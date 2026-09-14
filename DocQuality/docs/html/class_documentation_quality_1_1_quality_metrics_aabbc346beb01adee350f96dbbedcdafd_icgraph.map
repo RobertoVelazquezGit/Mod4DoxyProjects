@@ -1,0 +1,8 @@
+<map id="DocumentationQuality::QualityMetrics::validateTechnicalAccuracy" name="DocumentationQuality::QualityMetrics::validateTechnicalAccuracy">
+<area shape="rect" id="Node000001" title="Simulates accuracy validation by checking for nonempty text." alt="" coords="415,13,636,72"/>
+<area shape="rect" id="Node000002" href="$class_documentation_quality_1_1_quality_metrics.html#a6258b649a199480ae96fffca62177ce8" title="Generates a simulated quality report." alt="" coords="116,21,367,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="397,43,368,45,367,40,402,43"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Runs a simple example of DocumentationQuality::QualityMetrics." alt="" coords="18,29,68,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,44,68,45,68,40,103,42"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="77,22,77,17,72,13,43,8,20,10,10,16,10,23,20,32,16,35,5,25,5,13,19,5,43,3,75,8,82,15,82,24"/>
+</map>

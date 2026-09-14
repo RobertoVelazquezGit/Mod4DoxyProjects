@@ -1,0 +1,9 @@
+<map id="DocumentationQuality::QualityMetrics::assessDocumentation" name="DocumentationQuality::QualityMetrics::assessDocumentation">
+<area shape="rect" id="Node000001" title="Generates a simulated quality report." alt="" coords="5,96,257,139"/>
+<area shape="rect" id="Node000002" href="$class_documentation_quality_1_1_quality_metrics.html#a21e5b8a8fe08f261c5c3a0a25e1982d3" title="Assigns a simulated clarity score." alt="" coords="313,5,518,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,93,301,67,296,70,208,98"/>
+<area shape="rect" id="Node000003" href="$class_documentation_quality_1_1_quality_metrics.html#a986159bfedc12f5a8c9cd06f53675ec3" title="Calculates the proportion of documents containing nonempty text." alt="" coords="329,88,502,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="257,115,316,117,311,118,258,120"/>
+<area shape="rect" id="Node000004" href="$class_documentation_quality_1_1_quality_metrics.html#aabbc346beb01adee350f96dbbedcdafd" title="Simulates accuracy validation by checking for nonempty text." alt="" coords="305,171,526,229"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,137,300,165,295,166,207,142"/>
+</map>

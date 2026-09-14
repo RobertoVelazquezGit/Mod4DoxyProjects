@@ -1,0 +1,18 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Runs a simple example of DocumentationQuality::QualityMetrics." alt="" coords="19,220,68,247"/>
+<area shape="poly" id="edge8_Node000001_Node000001" title=" " alt="" coords="16,225,5,215,5,204,19,196,44,193,77,199,84,207,83,215,78,214,79,208,74,204,44,199,21,201,10,207,10,213,21,223"/>
+<area shape="rect" id="Node000002" href="$class_documentation_quality_1_1_quality_metrics.html#a6258b649a199480ae96fffca62177ce8" title="Generates a simulated quality report." alt="" coords="120,96,372,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,219,76,183,94,164,115,148,127,144,124,148,118,153,98,168,80,187,55,221"/>
+<area shape="rect" id="Node000006" href="$class_documentation_quality_1_1_quality_metrics.html#a9c3f881a620cf10224b2dfc153b0d211" title="Retrieves fictional benchmark scores." alt="" coords="153,163,339,221"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="68,226,140,212,137,216,70,231"/>
+<area shape="rect" id="Node000007" href="$class_documentation_quality_1_1_quality_metrics.html#a04d4974a011cc1ef88ed91f15ee5a7bc" title="Checks whether two version labels are nonempty and different." alt="" coords="116,245,376,304"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="68,236,103,243,99,246,70,241"/>
+<area shape="rect" id="Node000008" href="$class_documentation_quality_1_1_quality_metrics.html#acab56edfacf206e6807a1a6ade520d38" title="Selects fictional documents based on their age." alt="" coords="149,328,343,387"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="54,244,81,280,118,314,138,326,133,327,115,318,77,283,53,250"/>
+<area shape="rect" id="Node000003" href="$class_documentation_quality_1_1_quality_metrics.html#a21e5b8a8fe08f261c5c3a0a25e1982d3" title="Assigns a simulated clarity score." alt="" coords="432,5,637,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,93,420,67,415,70,324,98"/>
+<area shape="rect" id="Node000004" href="$class_documentation_quality_1_1_quality_metrics.html#a986159bfedc12f5a8c9cd06f53675ec3" title="Calculates the proportion of documents containing nonempty text." alt="" coords="448,88,621,147"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="372,115,435,116,430,118,373,120"/>
+<area shape="rect" id="Node000005" href="$class_documentation_quality_1_1_quality_metrics.html#aabbc346beb01adee350f96dbbedcdafd" title="Simulates accuracy validation by checking for nonempty text." alt="" coords="424,171,645,229"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="334,137,377,148,428,165,423,166,375,153,335,142"/>
+</map>

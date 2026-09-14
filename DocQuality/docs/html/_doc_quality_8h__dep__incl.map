@@ -1,0 +1,7 @@
+<map id="DocQuality.h" name="DocQuality.h">
+<area shape="rect" id="Node000001" title="Declarations for simulated documentation quality assessment." alt="" coords="70,5,166,32"/>
+<area shape="rect" id="Node000002" href="$_doc_quality_8cpp_source.html" title=" " alt="" coords="5,80,116,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,43,72,81,68,78,96,45"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Example usage of simulated documentation quality metrics." alt="" coords="139,80,214,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,42,169,80,164,79,136,47"/>
+</map>

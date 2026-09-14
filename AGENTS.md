@@ -254,6 +254,8 @@ Respond in the language used by the user unless the user explicitly requests ano
 
 Technical names, API names, compiler messages, and code identifiers should remain unchanged.
 
+Write code comments and Doxygen documentation in English, even when the conversation is in Spanish, unless the user explicitly requests otherwise.
+
 
 
 When there is uncertainty about the user's intention, ask before making changes.

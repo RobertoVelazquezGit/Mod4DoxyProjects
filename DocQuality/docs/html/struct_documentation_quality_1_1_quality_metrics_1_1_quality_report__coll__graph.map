@@ -1,0 +1,5 @@
+<map id="DocumentationQuality::QualityMetrics::QualityReport" name="DocumentationQuality::QualityMetrics::QualityReport">
+<area shape="rect" id="Node000001" title="Report containing scores, issues, and recommendations." alt="" coords="9,136,211,179"/>
+<area shape="rect" id="Node000002" href="$struct_documentation_quality_1_1_quality_metrics_1_1_documentation_score.html" title="Quality scores in the range [0.0, 1.0]." alt="" coords="5,5,215,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,78,113,136,107,135,108,82"/>
+</map>
