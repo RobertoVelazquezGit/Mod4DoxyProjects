@@ -1,0 +1,36 @@
+# Run from the BasicCodeDoc project directory: doxygen Doxyfile
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = BasicCodeDoc
+PROJECT_NUMBER         = 1.0
+PROJECT_BRIEF          = "Documented arithmetic and statistics calculator demonstration"
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = English
+INPUT                  = .
+INPUT_ENCODING         = UTF-8
+# Preserve the existing Windows-1252 source encoding.
+INPUT_FILE_ENCODING    = *.cpp=WINDOWS-1252
+FILE_PATTERNS          = *.h *.hpp *.cpp *.md
+RECURSIVE              = YES
+EXCLUDE                = docs x64 x86 Debug Release .vs
+USE_MDFILE_AS_MAINPAGE  = README.md
+MARKDOWN_SUPPORT       = YES
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = YES
+SOURCE_BROWSER         = YES
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+HAVE_DOT               = YES
+# Current Doxygen uses CLASS_GRAPH; CLASS_DIAGRAMS is obsolete.
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+DOT_IMAGE_FORMAT       = svg
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_LOGFILE           = docs/doxygen-warnings.log
+QUIET                  = YES
