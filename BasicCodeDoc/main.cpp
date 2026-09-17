@@ -385,7 +385,7 @@ string formatResult(double result, int decimalPlaces) {
     }
 
     // Convert to string using standard library function
-    string formatted = to_string(result);
+	string formatted = to_string(result);  // to_string provides a default precision, which we will adjust below    
 
     // Find decimal point and truncate to desired precision
     size_t decimal_pos = formatted.find('.');
