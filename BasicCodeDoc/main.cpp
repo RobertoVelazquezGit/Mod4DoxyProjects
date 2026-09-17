@@ -364,6 +364,19 @@ bool isValidNumber(double number) {
  *
  * Example: formatResult(3.14159, 2) returns "3.14"
  * Note: This is a simplified implementation; production code might use sprintf or streams
+ *
+ * ---
+ *
+ * Formatea un resultado numérico para su visualización con un número especificado de decimales.
+ * @param result El número a formatear
+ * @param decimalPlaces Número no negativo de lugares decimales a retener; pasado explícitamente
+ * @return Representación en cadena de caracteres del número formateado
+ *
+ * Esta función proporciona un formato básico para mostrar resultados de cálculos.
+ * Los números inválidos (NaN, infinito) se convierten en mensajes de error.
+ *
+ * Ejemplo: formatResult(3.14159, 2) devuelve "3.14"
+ * Nota: Esta es una implementación simplificada; el código de producción podría usar sprintf o streams
  */
 string formatResult(double result, int decimalPlaces) {
     // First check if the number is valid for display
